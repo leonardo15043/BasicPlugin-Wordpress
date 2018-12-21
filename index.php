@@ -10,3 +10,7 @@ add_action("admin_menu", "menu_admin_mi_modulo");
 function menu_admin_mi_modulo() {
   add_menu_page('Configuración Modulo', 'Configuración Modulo', 'manage_options', 'menu_config_mimodulo', 'controller_modulo');
 }
+
+function controller_modulo(){
+  include "mimodulo.php";
+}
