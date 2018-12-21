@@ -23,3 +23,10 @@ function controller_modulo(){
   }
   include "mimodulo.php";
 }
+
+add_action('wp_footer', 'data_footer');
+function data_footer() {
+  if($valor_texto = get_option('valor_texto')) {
+    echo "<p>{$valor_texto}</p>";
+  }
+}
