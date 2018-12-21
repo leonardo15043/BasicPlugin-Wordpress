@@ -12,5 +12,14 @@ function menu_admin_mi_modulo() {
 }
 
 function controller_modulo(){
+
+  if($_POST && $_POST['valor_texto']) {
+    $texto = $_POST['valor_texto'];
+    if(update_option('valor_texto', $texto)) {
+      echo '<p>El valor ha sido almacenado</p>';
+    } else {
+      echo '<p>No se pudo configurar el texto</p>';
+    }
+  }
   include "mimodulo.php";
 }
